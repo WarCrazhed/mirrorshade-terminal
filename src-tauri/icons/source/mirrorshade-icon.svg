@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <!-- Mirrorshade Terminal app icon (variant A: wraparound visor + cursor).
+       Source for `pnpm tauri icon`; the squircle sits on Apple's 824px grid. -->
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1b1e30"/>
+      <stop offset="1" stop-color="#05060a"/>
+    </linearGradient>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#120830"/>
+      <stop offset="0.62" stop-color="#561a86"/>
+      <stop offset="1" stop-color="#ff2bd6"/>
+    </linearGradient>
+    <linearGradient id="sun" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffe680"/>
+      <stop offset="1" stop-color="#ff2bd6"/>
+    </linearGradient>
+    <linearGradient id="rim" x1="196" y1="0" x2="828" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#2de2ff"/>
+      <stop offset="1" stop-color="#ff2bd6"/>
+    </linearGradient>
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="16"/>
+    </filter>
+    <clipPath id="visor">
+      <path d="M196 420C196 380 240 360 300 360L724 360C784 360 828 380 828 420L828 470C828 560 760 610 660 610C590 610 552 580 530 540C524 528 500 528 494 540C472 580 434 610 364 610C264 610 196 560 196 470Z"/>
+    </clipPath>
+  </defs>
+
+  <rect x="100" y="100" width="824" height="824" rx="185" fill="url(#bg)"/>
+  <rect x="101.5" y="101.5" width="821" height="821" rx="184" fill="none" stroke="#ffffff" stroke-opacity="0.09" stroke-width="3"/>
+
+  <g transform="translate(0 -36)">
+    <path d="M196 420C196 380 240 360 300 360L724 360C784 360 828 380 828 420L828 470C828 560 760 610 660 610C590 610 552 580 530 540C524 528 500 528 494 540C472 580 434 610 364 610C264 610 196 560 196 470Z" fill="none" stroke="url(#rim)" stroke-width="26" filter="url(#glow)" opacity="0.8"/>
+    <g clip-path="url(#visor)">
+      <rect x="180" y="340" width="664" height="166" fill="url(#sky)"/>
+      <circle cx="512" cy="506" r="104" fill="url(#sun)"/>
+      <rect x="380" y="458" width="264" height="7" fill="#4a1676"/>
+      <rect x="380" y="474" width="264" height="9" fill="#4a1676"/>
+      <rect x="380" y="491" width="264" height="11" fill="#4a1676"/>
+      <rect x="180" y="506" width="664" height="120" fill="#0a0418"/>
+      <g stroke="#2de2ff" stroke-width="2.5" opacity="0.7">
+        <line x1="180" y1="506" x2="844" y2="506" stroke-width="4" opacity="1"/>
+        <line x1="180" y1="522" x2="844" y2="522"/>
+        <line x1="180" y1="544" x2="844" y2="544"/>
+        <line x1="180" y1="574" x2="844" y2="574"/>
+        <line x1="180" y1="614" x2="844" y2="614"/>
+        <line x1="512" y1="506" x2="140" y2="640"/>
+        <line x1="512" y1="506" x2="290" y2="640"/>
+        <line x1="512" y1="506" x2="420" y2="640"/>
+        <line x1="512" y1="506" x2="512" y2="640"/>
+        <line x1="512" y1="506" x2="604" y2="640"/>
+        <line x1="512" y1="506" x2="734" y2="640"/>
+        <line x1="512" y1="506" x2="884" y2="640"/>
+      </g>
+      <polygon points="300,360 384,360 252,620 168,620" fill="#ffffff" opacity="0.16"/>
+      <polygon points="420,360 446,360 314,620 288,620" fill="#ffffff" opacity="0.10"/>
+    </g>
+    <path d="M196 420C196 380 240 360 300 360L724 360C784 360 828 380 828 420L828 470C828 560 760 610 660 610C590 610 552 580 530 540C524 528 500 528 494 540C472 580 434 610 364 610C264 610 196 560 196 470Z" fill="none" stroke="url(#rim)" stroke-width="8"/>
+  </g>
+
+  <g filter="url(#glow)" opacity="0.7">
+    <polyline points="420,706 482,756 420,806" fill="none" stroke="#2de2ff" stroke-width="30" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="516" y="790" width="96" height="30" rx="8" fill="#2de2ff"/>
+  </g>
+  <polyline points="420,706 482,756 420,806" fill="none" stroke="#2de2ff" stroke-width="28" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="516" y="790" width="96" height="28" rx="8" fill="#2de2ff"/>
+</svg>

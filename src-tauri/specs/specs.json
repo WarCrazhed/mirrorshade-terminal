@@ -1,0 +1,1342 @@
+[
+ {
+  "name": "git",
+  "description": "Control de versiones",
+  "subcommands": [
+   {
+    "name": "status",
+    "description": "Estado del árbol de trabajo",
+    "options": [
+     {
+      "name": [
+       "-s",
+       "--short"
+      ],
+      "description": "Formato corto"
+     }
+    ]
+   },
+   {
+    "name": "add",
+    "description": "Agregar cambios al índice",
+    "args": {
+     "template": "filepaths"
+    },
+    "options": [
+     {
+      "name": [
+       "-A",
+       "--all"
+      ],
+      "description": "Todo"
+     },
+     {
+      "name": [
+       "-p",
+       "--patch"
+      ],
+      "description": "Interactivo por bloques"
+     }
+    ]
+   },
+   {
+    "name": "commit",
+    "description": "Registrar cambios",
+    "options": [
+     {
+      "name": [
+       "-m",
+       "--message"
+      ],
+      "description": "Mensaje",
+      "takes_arg": true
+     },
+     {
+      "name": [
+       "-a",
+       "--all"
+      ],
+      "description": "Incluir modificados"
+     },
+     {
+      "name": [
+       "--amend"
+      ],
+      "description": "Corregir último commit"
+     }
+    ]
+   },
+   {
+    "name": "push",
+    "description": "Subir commits",
+    "options": [
+     {
+      "name": [
+       "-u",
+       "--set-upstream"
+      ],
+      "description": "Fijar upstream"
+     },
+     {
+      "name": [
+       "--force-with-lease"
+      ],
+      "description": "Forzar con seguridad"
+     },
+     {
+      "name": [
+       "--tags"
+      ],
+      "description": "Subir tags"
+     }
+    ]
+   },
+   {
+    "name": "pull",
+    "description": "Traer e integrar",
+    "options": [
+     {
+      "name": [
+       "--rebase"
+      ],
+      "description": "Rebase en vez de merge"
+     }
+    ]
+   },
+   {
+    "name": "fetch",
+    "description": "Descargar refs",
+    "options": [
+     {
+      "name": [
+       "--all"
+      ],
+      "description": "Todos los remotos"
+     },
+     {
+      "name": [
+       "-p",
+       "--prune"
+      ],
+      "description": "Limpiar refs borradas"
+     }
+    ]
+   },
+   {
+    "name": "checkout",
+    "description": "Cambiar de rama",
+    "args": {
+     "generator": "git_branches"
+    },
+    "options": [
+     {
+      "name": [
+       "-b"
+      ],
+      "description": "Crear rama nueva",
+      "takes_arg": true
+     }
+    ]
+   },
+   {
+    "name": "switch",
+    "description": "Cambiar de rama",
+    "args": {
+     "generator": "git_branches"
+    },
+    "options": [
+     {
+      "name": [
+       "-c",
+       "--create"
+      ],
+      "description": "Crear rama",
+      "takes_arg": true
+     }
+    ]
+   },
+   {
+    "name": "branch",
+    "description": "Listar/crear ramas",
+    "args": {
+     "generator": "git_branches"
+    },
+    "options": [
+     {
+      "name": [
+       "-d"
+      ],
+      "description": "Borrar rama",
+      "takes_arg": true
+     },
+     {
+      "name": [
+       "-D"
+      ],
+      "description": "Forzar borrado",
+      "takes_arg": true
+     },
+     {
+      "name": [
+       "-a",
+       "--all"
+      ],
+      "description": "Incluir remotas"
+     }
+    ]
+   },
+   {
+    "name": "merge",
+    "description": "Fusionar rama",
+    "args": {
+     "generator": "git_branches"
+    },
+    "options": [
+     {
+      "name": [
+       "--no-ff"
+      ],
+      "description": "Siempre crear merge commit"
+     },
+     {
+      "name": [
+       "--abort"
+      ],
+      "description": "Abortar"
+     }
+    ]
+   },
+   {
+    "name": "rebase",
+    "description": "Reaplicar commits",
+    "args": {
+     "generator": "git_branches"
+    },
+    "options": [
+     {
+      "name": [
+       "-i",
+       "--interactive"
+      ],
+      "description": "Interactivo"
+     },
+     {
+      "name": [
+       "--continue"
+      ],
+      "description": "Continuar"
+     },
+     {
+      "name": [
+       "--abort"
+      ],
+      "description": "Abortar"
+     }
+    ]
+   },
+   {
+    "name": "log",
+    "description": "Historial",
+    "options": [
+     {
+      "name": [
+       "--oneline"
+      ],
+      "description": "Una línea por commit"
+     },
+     {
+      "name": [
+       "--graph"
+      ],
+      "description": "Gráfico"
+     },
+     {
+      "name": [
+       "-n",
+       "--max-count"
+      ],
+      "description": "Límite",
+      "takes_arg": true
+     }
+    ]
+   },
+   {
+    "name": "diff",
+    "description": "Diferencias",
+    "args": {
+     "template": "filepaths"
+    },
+    "options": [
+     {
+      "name": [
+       "--staged"
+      ],
+      "description": "Contra el índice"
+     },
+     {
+      "name": [
+       "--stat"
+      ],
+      "description": "Resumen"
+     }
+    ]
+   },
+   {
+    "name": "stash",
+    "description": "Guardar cambios temporalmente",
+    "subcommands": [
+     {
+      "name": "pop",
+      "description": "Aplicar y borrar"
+     },
+     {
+      "name": "list",
+      "description": "Listar"
+     },
+     {
+      "name": "apply",
+      "description": "Aplicar"
+     },
+     {
+      "name": "drop",
+      "description": "Borrar"
+     }
+    ]
+   },
+   {
+    "name": "restore",
+    "description": "Restaurar archivos",
+    "args": {
+     "template": "filepaths"
+    },
+    "options": [
+     {
+      "name": [
+       "-S",
+       "--staged"
+      ],
+      "description": "Sacar del índice"
+     }
+    ]
+   },
+   {
+    "name": "reset",
+    "description": "Mover HEAD",
+    "options": [
+     {
+      "name": [
+       "--soft"
+      ],
+      "description": "Mantener cambios en índice"
+     },
+     {
+      "name": [
+       "--hard"
+      ],
+      "description": "Descartar todo"
+     }
+    ]
+   },
+   {
+    "name": "clone",
+    "description": "Clonar repositorio"
+   },
+   {
+    "name": "init",
+    "description": "Crear repositorio"
+   },
+   {
+    "name": "remote",
+    "description": "Remotos",
+    "subcommands": [
+     {
+      "name": "add",
+      "description": "Agregar"
+     },
+     {
+      "name": "remove",
+      "description": "Quitar"
+     },
+     {
+      "name": "-v",
+      "description": "Listar con URLs"
+     }
+    ]
+   },
+   {
+    "name": "tag",
+    "description": "Tags"
+   },
+   {
+    "name": "show",
+    "description": "Mostrar objeto"
+   },
+   {
+    "name": "cherry-pick",
+    "description": "Aplicar commit"
+   },
+   {
+    "name": "revert",
+    "description": "Revertir commit"
+   },
+   {
+    "name": "worktree",
+    "description": "Árboles de trabajo",
+    "subcommands": [
+     {
+      "name": "add",
+      "description": "Agregar"
+     },
+     {
+      "name": "list",
+      "description": "Listar"
+     },
+     {
+      "name": "remove",
+      "description": "Quitar"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "name": "pnpm",
+  "description": "Gestor de paquetes",
+  "args": {
+   "generator": "npm_scripts"
+  },
+  "subcommands": [
+   {
+    "name": "install",
+    "description": "Instalar dependencias",
+    "options": [
+     {
+      "name": [
+       "--frozen-lockfile"
+      ],
+      "description": "No modificar lockfile"
+     }
+    ]
+   },
+   {
+    "name": "i",
+    "description": "Instalar dependencias"
+   },
+   {
+    "name": "add",
+    "description": "Agregar paquete",
+    "options": [
+     {
+      "name": [
+       "-D",
+       "--save-dev"
+      ],
+      "description": "Como devDependency"
+     },
+     {
+      "name": [
+       "-g",
+       "--global"
+      ],
+      "description": "Global"
+     }
+    ]
+   },
+   {
+    "name": "remove",
+    "description": "Quitar paquete"
+   },
+   {
+    "name": "update",
+    "description": "Actualizar",
+    "options": [
+     {
+      "name": [
+       "-i",
+       "--interactive"
+      ],
+      "description": "Interactivo"
+     },
+     {
+      "name": [
+       "--latest"
+      ],
+      "description": "Ignorar rangos"
+     }
+    ]
+   },
+   {
+    "name": "run",
+    "description": "Correr script",
+    "args": {
+     "generator": "npm_scripts"
+    }
+   },
+   {
+    "name": "dev",
+    "description": "Script dev"
+   },
+   {
+    "name": "build",
+    "description": "Script build"
+   },
+   {
+    "name": "test",
+    "description": "Script test"
+   },
+   {
+    "name": "dlx",
+    "description": "Ejecutar paquete sin instalar"
+   },
+   {
+    "name": "exec",
+    "description": "Ejecutar en el proyecto"
+   },
+   {
+    "name": "audit",
+    "description": "Auditar vulnerabilidades"
+   },
+   {
+    "name": "outdated",
+    "description": "Paquetes desactualizados"
+   },
+   {
+    "name": "why",
+    "description": "Por qué está instalado"
+   },
+   {
+    "name": "list",
+    "description": "Listar dependencias"
+   },
+   {
+    "name": "store",
+    "description": "Store",
+    "subcommands": [
+     {
+      "name": "prune",
+      "description": "Limpiar store"
+     }
+    ]
+   },
+   {
+    "name": "create",
+    "description": "Crear proyecto"
+   },
+   {
+    "name": "tauri",
+    "description": "CLI de Tauri",
+    "subcommands": [
+     {
+      "name": "dev",
+      "description": "Desarrollo"
+     },
+     {
+      "name": "build",
+      "description": "Compilar app"
+     },
+     {
+      "name": "icon",
+      "description": "Generar iconos"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "name": "npm",
+  "description": "Gestor de paquetes de Node",
+  "subcommands": [
+   {
+    "name": "install",
+    "description": "Instalar",
+    "options": [
+     {
+      "name": [
+       "-D",
+       "--save-dev"
+      ],
+      "description": "Como devDependency"
+     },
+     {
+      "name": [
+       "-g",
+       "--global"
+      ],
+      "description": "Global"
+     }
+    ]
+   },
+   {
+    "name": "ci",
+    "description": "Instalación limpia"
+   },
+   {
+    "name": "run",
+    "description": "Correr script",
+    "args": {
+     "generator": "npm_scripts"
+    }
+   },
+   {
+    "name": "test",
+    "description": "Tests"
+   },
+   {
+    "name": "start",
+    "description": "Iniciar"
+   },
+   {
+    "name": "uninstall",
+    "description": "Desinstalar"
+   },
+   {
+    "name": "audit",
+    "description": "Auditar"
+   },
+   {
+    "name": "outdated",
+    "description": "Desactualizados"
+   },
+   {
+    "name": "init",
+    "description": "Crear package.json"
+   }
+  ]
+ },
+ {
+  "name": "docker",
+  "description": "Contenedores",
+  "subcommands": [
+   {
+    "name": "ps",
+    "description": "Contenedores",
+    "options": [
+     {
+      "name": [
+       "-a",
+       "--all"
+      ],
+      "description": "Incluir detenidos"
+     }
+    ]
+   },
+   {
+    "name": "images",
+    "description": "Imágenes"
+   },
+   {
+    "name": "run",
+    "description": "Crear y correr",
+    "options": [
+     {
+      "name": [
+       "-d",
+       "--detach"
+      ],
+      "description": "En segundo plano"
+     },
+     {
+      "name": [
+       "-p",
+       "--publish"
+      ],
+      "description": "Puertos",
+      "takes_arg": true
+     },
+     {
+      "name": [
+       "-v",
+       "--volume"
+      ],
+      "description": "Volumen",
+      "takes_arg": true
+     },
+     {
+      "name": [
+       "-e",
+       "--env"
+      ],
+      "description": "Variable",
+      "takes_arg": true
+     },
+     {
+      "name": [
+       "--rm"
+      ],
+      "description": "Borrar al salir"
+     },
+     {
+      "name": [
+       "-it"
+      ],
+      "description": "Interactivo con TTY"
+     },
+     {
+      "name": [
+       "--name"
+      ],
+      "description": "Nombre",
+      "takes_arg": true
+     }
+    ]
+   },
+   {
+    "name": "exec",
+    "description": "Ejecutar en contenedor",
+    "options": [
+     {
+      "name": [
+       "-it"
+      ],
+      "description": "Interactivo con TTY"
+     }
+    ]
+   },
+   {
+    "name": "logs",
+    "description": "Logs",
+    "options": [
+     {
+      "name": [
+       "-f",
+       "--follow"
+      ],
+      "description": "Seguir"
+     }
+    ]
+   },
+   {
+    "name": "stop",
+    "description": "Detener"
+   },
+   {
+    "name": "start",
+    "description": "Iniciar"
+   },
+   {
+    "name": "restart",
+    "description": "Reiniciar"
+   },
+   {
+    "name": "rm",
+    "description": "Borrar contenedor"
+   },
+   {
+    "name": "rmi",
+    "description": "Borrar imagen"
+   },
+   {
+    "name": "build",
+    "description": "Construir imagen",
+    "args": {
+     "template": "folders"
+    },
+    "options": [
+     {
+      "name": [
+       "-t",
+       "--tag"
+      ],
+      "description": "Tag",
+      "takes_arg": true
+     },
+     {
+      "name": [
+       "-f",
+       "--file"
+      ],
+      "description": "Dockerfile",
+      "takes_arg": true
+     }
+    ]
+   },
+   {
+    "name": "pull",
+    "description": "Descargar imagen"
+   },
+   {
+    "name": "push",
+    "description": "Subir imagen"
+   },
+   {
+    "name": "compose",
+    "description": "Docker Compose",
+    "subcommands": [
+     {
+      "name": "up",
+      "description": "Levantar",
+      "options": [
+       {
+        "name": [
+         "-d",
+         "--detach"
+        ],
+        "description": "En segundo plano"
+       },
+       {
+        "name": [
+         "--build"
+        ],
+        "description": "Reconstruir"
+       }
+      ]
+     },
+     {
+      "name": "down",
+      "description": "Bajar"
+     },
+     {
+      "name": "logs",
+      "description": "Logs"
+     },
+     {
+      "name": "ps",
+      "description": "Servicios"
+     },
+     {
+      "name": "exec",
+      "description": "Ejecutar"
+     },
+     {
+      "name": "build",
+      "description": "Construir"
+     }
+    ]
+   },
+   {
+    "name": "system",
+    "description": "Sistema",
+    "subcommands": [
+     {
+      "name": "prune",
+      "description": "Limpiar"
+     },
+     {
+      "name": "df",
+      "description": "Uso de disco"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "name": "cargo",
+  "description": "Rust",
+  "subcommands": [
+   {
+    "name": "build",
+    "description": "Compilar",
+    "options": [
+     {
+      "name": [
+       "-r",
+       "--release"
+      ],
+      "description": "Optimizado"
+     }
+    ]
+   },
+   {
+    "name": "run",
+    "description": "Compilar y correr",
+    "options": [
+     {
+      "name": [
+       "-r",
+       "--release"
+      ],
+      "description": "Optimizado"
+     }
+    ]
+   },
+   {
+    "name": "test",
+    "description": "Tests"
+   },
+   {
+    "name": "check",
+    "description": "Revisar sin compilar"
+   },
+   {
+    "name": "clippy",
+    "description": "Linter"
+   },
+   {
+    "name": "fmt",
+    "description": "Formatear"
+   },
+   {
+    "name": "add",
+    "description": "Agregar dependencia"
+   },
+   {
+    "name": "remove",
+    "description": "Quitar dependencia"
+   },
+   {
+    "name": "update",
+    "description": "Actualizar lockfile"
+   },
+   {
+    "name": "new",
+    "description": "Nuevo proyecto"
+   },
+   {
+    "name": "init",
+    "description": "Inicializar"
+   },
+   {
+    "name": "doc",
+    "description": "Documentación",
+    "options": [
+     {
+      "name": [
+       "--open"
+      ],
+      "description": "Abrir"
+     }
+    ]
+   },
+   {
+    "name": "audit",
+    "description": "Auditar vulnerabilidades"
+   },
+   {
+    "name": "deny",
+    "description": "Políticas de dependencias",
+    "subcommands": [
+     {
+      "name": "check",
+      "description": "Revisar"
+     }
+    ]
+   },
+   {
+    "name": "clean",
+    "description": "Limpiar target"
+   }
+  ]
+ },
+ {
+  "name": "brew",
+  "description": "Homebrew",
+  "subcommands": [
+   {
+    "name": "install",
+    "description": "Instalar",
+    "options": [
+     {
+      "name": [
+       "--cask"
+      ],
+      "description": "App gráfica"
+     }
+    ]
+   },
+   {
+    "name": "uninstall",
+    "description": "Desinstalar"
+   },
+   {
+    "name": "upgrade",
+    "description": "Actualizar paquetes"
+   },
+   {
+    "name": "update",
+    "description": "Actualizar Homebrew"
+   },
+   {
+    "name": "list",
+    "description": "Instalados"
+   },
+   {
+    "name": "search",
+    "description": "Buscar"
+   },
+   {
+    "name": "info",
+    "description": "Información"
+   },
+   {
+    "name": "outdated",
+    "description": "Desactualizados"
+   },
+   {
+    "name": "cleanup",
+    "description": "Limpiar"
+   },
+   {
+    "name": "doctor",
+    "description": "Diagnóstico"
+   },
+   {
+    "name": "services",
+    "description": "Servicios",
+    "subcommands": [
+     {
+      "name": "list",
+      "description": "Listar"
+     },
+     {
+      "name": "start",
+      "description": "Iniciar"
+     },
+     {
+      "name": "stop",
+      "description": "Detener"
+     },
+     {
+      "name": "restart",
+      "description": "Reiniciar"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "name": "php",
+  "description": "PHP",
+  "args": {
+   "template": "filepaths"
+  },
+  "subcommands": [
+   {
+    "name": "artisan",
+    "description": "Laravel Artisan",
+    "subcommands": [
+     {
+      "name": "serve",
+      "description": "Servidor de desarrollo"
+     },
+     {
+      "name": "migrate",
+      "description": "Correr migraciones"
+     },
+     {
+      "name": "migrate:fresh",
+      "description": "Recrear BD y migrar"
+     },
+     {
+      "name": "migrate:rollback",
+      "description": "Revertir migración"
+     },
+     {
+      "name": "migrate:status",
+      "description": "Estado de migraciones"
+     },
+     {
+      "name": "db:seed",
+      "description": "Sembrar datos"
+     },
+     {
+      "name": "tinker",
+      "description": "REPL"
+     },
+     {
+      "name": "route:list",
+      "description": "Listar rutas"
+     },
+     {
+      "name": "make:model",
+      "description": "Crear modelo"
+     },
+     {
+      "name": "make:controller",
+      "description": "Crear controlador"
+     },
+     {
+      "name": "make:migration",
+      "description": "Crear migración"
+     },
+     {
+      "name": "make:request",
+      "description": "Crear form request"
+     },
+     {
+      "name": "make:seeder",
+      "description": "Crear seeder"
+     },
+     {
+      "name": "make:factory",
+      "description": "Crear factory"
+     },
+     {
+      "name": "make:test",
+      "description": "Crear test"
+     },
+     {
+      "name": "make:job",
+      "description": "Crear job"
+     },
+     {
+      "name": "make:command",
+      "description": "Crear comando"
+     },
+     {
+      "name": "make:middleware",
+      "description": "Crear middleware"
+     },
+     {
+      "name": "make:resource",
+      "description": "Crear API resource"
+     },
+     {
+      "name": "make:policy",
+      "description": "Crear policy"
+     },
+     {
+      "name": "queue:work",
+      "description": "Procesar cola"
+     },
+     {
+      "name": "queue:restart",
+      "description": "Reiniciar workers"
+     },
+     {
+      "name": "cache:clear",
+      "description": "Limpiar caché"
+     },
+     {
+      "name": "config:clear",
+      "description": "Limpiar caché de config"
+     },
+     {
+      "name": "config:cache",
+      "description": "Cachear config"
+     },
+     {
+      "name": "route:clear",
+      "description": "Limpiar caché de rutas"
+     },
+     {
+      "name": "view:clear",
+      "description": "Limpiar vistas"
+     },
+     {
+      "name": "optimize",
+      "description": "Optimizar"
+     },
+     {
+      "name": "optimize:clear",
+      "description": "Limpiar optimizaciones"
+     },
+     {
+      "name": "key:generate",
+      "description": "Generar APP_KEY"
+     },
+     {
+      "name": "storage:link",
+      "description": "Enlazar storage"
+     },
+     {
+      "name": "test",
+      "description": "Correr tests"
+     },
+     {
+      "name": "schedule:run",
+      "description": "Correr tareas programadas"
+     },
+     {
+      "name": "about",
+      "description": "Información de la app"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "name": "composer",
+  "description": "Dependencias PHP",
+  "subcommands": [
+   {
+    "name": "install",
+    "description": "Instalar"
+   },
+   {
+    "name": "update",
+    "description": "Actualizar"
+   },
+   {
+    "name": "require",
+    "description": "Agregar paquete",
+    "options": [
+     {
+      "name": [
+       "--dev"
+      ],
+      "description": "Dev"
+     }
+    ]
+   },
+   {
+    "name": "remove",
+    "description": "Quitar"
+   },
+   {
+    "name": "dump-autoload",
+    "description": "Regenerar autoload"
+   },
+   {
+    "name": "outdated",
+    "description": "Desactualizados"
+   },
+   {
+    "name": "audit",
+    "description": "Auditar"
+   }
+  ]
+ },
+ {
+  "name": "ollama",
+  "description": "Modelos locales",
+  "subcommands": [
+   {
+    "name": "pull",
+    "description": "Descargar modelo"
+   },
+   {
+    "name": "list",
+    "description": "Modelos instalados"
+   },
+   {
+    "name": "run",
+    "description": "Correr modelo"
+   },
+   {
+    "name": "ps",
+    "description": "Modelos cargados"
+   },
+   {
+    "name": "rm",
+    "description": "Borrar modelo"
+   },
+   {
+    "name": "serve",
+    "description": "Iniciar servidor"
+   },
+   {
+    "name": "show",
+    "description": "Info del modelo"
+   }
+  ]
+ },
+ {
+  "name": "cd",
+  "description": "Cambiar de carpeta",
+  "args": {
+   "template": "folders"
+  }
+ },
+ {
+  "name": "ls",
+  "description": "",
+  "args": {
+   "template": "filepaths"
+  }
+ },
+ {
+  "name": "cat",
+  "description": "",
+  "args": {
+   "template": "filepaths"
+  }
+ },
+ {
+  "name": "less",
+  "description": "",
+  "args": {
+   "template": "filepaths"
+  }
+ },
+ {
+  "name": "vim",
+  "description": "",
+  "args": {
+   "template": "filepaths"
+  }
+ },
+ {
+  "name": "nvim",
+  "description": "",
+  "args": {
+   "template": "filepaths"
+  }
+ },
+ {
+  "name": "nano",
+  "description": "",
+  "args": {
+   "template": "filepaths"
+  }
+ },
+ {
+  "name": "code",
+  "description": "",
+  "args": {
+   "template": "filepaths"
+  }
+ },
+ {
+  "name": "rm",
+  "description": "",
+  "args": {
+   "template": "filepaths"
+  }
+ },
+ {
+  "name": "cp",
+  "description": "",
+  "args": {
+   "template": "filepaths"
+  }
+ },
+ {
+  "name": "mv",
+  "description": "",
+  "args": {
+   "template": "filepaths"
+  }
+ },
+ {
+  "name": "open",
+  "description": "",
+  "args": {
+   "template": "filepaths"
+  }
+ },
+ {
+  "name": "head",
+  "description": "",
+  "args": {
+   "template": "filepaths"
+  }
+ },
+ {
+  "name": "tail",
+  "description": "",
+  "args": {
+   "template": "filepaths"
+  }
+ },
+ {
+  "name": "touch",
+  "description": "",
+  "args": {
+   "template": "filepaths"
+  }
+ },
+ {
+  "name": "mkdir",
+  "description": "",
+  "args": {
+   "template": "folders"
+  }
+ },
+ {
+  "name": "source",
+  "description": "",
+  "args": {
+   "template": "filepaths"
+  }
+ }
+]

@@ -1,0 +1,78 @@
+/* Theme tokens. --bg/--text/--accent/--ok/--err/--warn/--selection/--opacity
+   are set from JS (themes.ts); everything else derives from them. */
+:root {
+  --bg: #0f1117;
+  --text: #d6dae4;
+  --accent: #7aa2f7;
+  --ok: #9ece6a;
+  --err: #f7768e;
+  --warn: #e0af68;
+  --selection: #2f3a55;
+  --opacity: 1;
+
+  --surface: color-mix(in srgb, var(--bg), var(--text) 5%);
+  --surface-2: color-mix(in srgb, var(--bg), var(--text) 10%);
+  --border: color-mix(in srgb, var(--bg), var(--text) 14%);
+  --muted: color-mix(in srgb, var(--text) 58%, var(--bg));
+  --faint: color-mix(in srgb, var(--text) 35%, var(--bg));
+  --sel: color-mix(in srgb, var(--bg), var(--accent) 24%);
+  --on-accent: #ffffff;
+  --on-err: #ffffff;
+  --bg-a: color-mix(in srgb, var(--bg) calc(var(--opacity) * 100%), transparent);
+  --surface-a: color-mix(in srgb, var(--surface) calc(min(1, var(--opacity) + 0.06) * 100%), transparent);
+  --code-bg: color-mix(in srgb, var(--bg), black 18%);
+}
+
+html,
+body {
+  margin: 0;
+  height: 100%;
+  overflow: hidden;
+  background: transparent;
+  color: var(--text);
+  font: 12px -apple-system, BlinkMacSystemFont, sans-serif;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+button {
+  border: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+  cursor: default;
+}
+
+kbd {
+  padding: 1px 4px;
+  border-radius: 3px;
+  background: var(--surface-2);
+  color: var(--muted);
+  font: 10.5px -apple-system, sans-serif;
+}
+
+.btn {
+  border: 1px solid var(--border);
+  background: var(--surface-2);
+  color: var(--text);
+  border-radius: 6px;
+  padding: 5px 12px;
+  font-size: 12px;
+}
+.btn:hover {
+  background: color-mix(in srgb, var(--surface-2), var(--text) 6%);
+}
+.btn.primary {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--on-accent);
+  font-weight: 600;
+}
+.btn.primary:hover {
+  background: color-mix(in srgb, var(--accent) 88%, var(--on-accent));
+}
+.btn.danger {
+  background: var(--err);
+  border-color: var(--err);
+  color: var(--on-err);
+}

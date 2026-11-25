@@ -1,0 +1,4 @@
+__ms_source .zlogin
+ZDOTDIR="$MIRRORSHADE_USER_ZDOTDIR"
+unset MIRRORSHADE_USER_ZDOTDIR MIRRORSHADE_INTEGRATION_DIR
+unfunction __ms_source 2>/dev/null
